@@ -1,0 +1,81 @@
+:root {
+  --bg: #0E0E0E;
+  --fg: hsl(160 100% 50%);
+  --dim: hsl(160 30% 40%);
+  --user: hsl(200 100% 60%);
+  --path: hsl(270 80% 70%);
+  --err: hsl(0 80% 60%);
+  --hi: hsl(45 100% 60%);
+  --link: hsl(200 100% 65%);
+  --border: hsl(160 40% 20%);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; margin: 0; }
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); font: 400 14px/1.5 "JetBrains Mono", "Fira Code", monospace; }
+@media (min-width: 768px) { body { font-size: 16px; } }
+::selection { background: var(--fg); color: var(--bg); }
+
+.shell { position: relative; min-height: 100vh; cursor: text; }
+.crt { animation: crtFlicker 4s infinite; }
+@keyframes crtFlicker { 0% { opacity: .97 } 5% { opacity: 1 } 10% { opacity: .98 } 15%, to { opacity: 1 } }
+.scan { position: fixed; inset: 0; z-index: 10; pointer-events: none; background: repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(160 100% 50% / .03) 2px, hsl(160 100% 50% / .03) 4px); }
+.glow { text-shadow: 0 0 5px hsl(160 100% 50% / .5), 0 0 10px hsl(160 100% 50% / .2); }
+
+.screen { position: relative; z-index: 20; padding: 16px 16px 128px; overflow-y: auto; height: 100vh; scrollbar-color: var(--border) transparent; }
+@media (min-width: 768px) { .screen { padding: 24px 24px 128px; } }
+
+pre { font: inherit; white-space: pre-wrap; overflow-wrap: anywhere; }
+.out > div, .row { animation: typeIn .1s ease-out; }
+@keyframes typeIn { from { opacity: 0; transform: translateY(2px) } to { opacity: 1; transform: none } }
+.entry { margin-top: 4px; }
+.entry > .lines { margin-top: 4px; }
+
+.line { display: flex; flex-wrap: wrap; align-items: center; }
+.line--input { margin-top: 4px; }
+.ps { white-space: nowrap; flex-shrink: 0; font-weight: 700; }
+.ps .u { color: var(--user); } .ps .h { color: var(--fg); } .ps .p { color: var(--path); }
+.ps .s, .ps .c { color: var(--dim); font-weight: 400; }
+.ps .d { color: var(--fg); font-weight: 400; }
+.field { flex: 1; display: flex; align-items: center; min-width: 0; }
+.in { flex: 1; min-width: 0; background: transparent; border: 0; outline: 0; color: var(--fg); font: inherit; caret-color: transparent; padding: 0; }
+.caret { animation: blink 1s step-end infinite; }
+.in:not(:focus) + .caret { opacity: .35; animation: none; }
+@keyframes blink { 50% { opacity: 0 } }
+
+.t-dim { color: var(--dim); }
+.t-err { color: var(--err); }
+.t-hi { color: var(--hi); }
+.t-link, .t-link a { color: var(--link); text-decoration: underline; }
+.t-dir { color: var(--user); font-weight: 700; }
+.banner { line-height: 1.05; overflow-x: auto; white-space: pre; font-size: clamp(7px, 1.9vw, 16px); }
+button.click { display: block; background: none; border: 0; padding: 0; font: inherit; text-align: left; cursor: pointer; }
+button.click:hover pre, button.click:focus-visible pre { text-decoration: underline; }
+button.click:focus-visible { outline: 1px dashed var(--fg); outline-offset: 2px; }
+
+.vol { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid hsl(160 100% 50% / .3); border-radius: 4px; background: rgba(14, 14, 14, .8); backdrop-filter: blur(4px); }
+.vol__btn { width: 16px; height: 16px; padding: 0; border: 0; background: none; color: hsl(160 100% 50% / .7); cursor: pointer; }
+.vol__btn:hover { color: var(--fg); }
+.vol__btn svg { display: block; width: 16px; height: 16px; }
+.vol__range { width: 80px; height: 4px; accent-color: var(--fg); cursor: pointer; }
+
+/* ---------- PK-1100 LCD: dark ink on a pale grey-green reflective screen, no glow ---------- */
+.lcd {
+  --bg: #a9b59b; --fg: #1f251b; --dim: #4b5743; --user: #1f251b; --path: #33402d;
+  --err: #6b1d16; --hi: #161b12; --link: #22305a; --border: #6f7b64;
+}
+body.lcd { background: var(--bg); }
+.lcd .glow { text-shadow: 1px 0 0 rgba(31, 37, 27, .22); }
+.lcd .ps .h, .lcd .ps .d { color: var(--fg); }
+.lcd .ps .s, .lcd .ps .c { color: var(--dim); }
+.lcd .scan { background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(20, 26, 16, .05) 3px 4px); }
+.lcd .crt { animation: none; }
+.lcd ::selection { background: var(--fg); color: var(--bg); }
+.lcd .vol { border-color: rgba(31, 37, 27, .35); background: rgba(169, 181, 155, .85); }
+.lcd .vol__btn { color: rgba(31, 37, 27, .7); }
+.lcd .vol__btn:hover { color: var(--fg); }
+.lcd .line--input[hidden] { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .crt, .caret, .out > div, .row { animation: none; }
+}

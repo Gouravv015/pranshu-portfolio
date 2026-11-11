@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pranshu Kumar | Developer Terminal</title>
+<meta name="theme-color" content="#0E0E0E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&text=%E2%95%90%E2%95%91%E2%95%94%E2%95%97%E2%95%9A%E2%95%9D%E2%94%80%E2%94%82%E2%94%8C%E2%94%90%E2%94%94%E2%94%98%E2%96%88%E2%96%91%E2%96%93" rel="stylesheet">
+<link rel="stylesheet" href="terminal.css?v=3">
+<script type="module" src="terminal.js?v=2"></script>
+</head>
+<body>
+<div class="shell crt">
+  <div class="scan" aria-hidden="true"></div>
+  <div class="vol">
+    <button type="button" class="vol__btn" aria-label="Mute keystroke sound"></button>
+    <input class="vol__range" type="range" min="0" max="1" step="0.05" aria-label="Keystroke volume">
+  </div>
+  <div class="screen" role="log" aria-live="polite" aria-label="Terminal">
+    <div class="out"></div>
+    <form class="line line--input" autocomplete="off">
+      <span class="ps"></span>
+      <span class="field">
+        <input class="in glow" type="text" aria-label="Type a command" spellcheck="false" autocapitalize="off" autocorrect="off" enterkeyhint="send">
+        <span class="caret glow" aria-hidden="true">█</span>
+      </span>
+    </form>
+  </div>
+</div>
+</body>
+</html>

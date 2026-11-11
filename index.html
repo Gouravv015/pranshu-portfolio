@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pranshu Kumar — Software Engineer</title>
+<meta name="description" content="Pranshu Kumar builds MCP servers, retrieval pipelines and the full-stack products around them. B.Tech CSE at Parul University, BS Data Science at IIT Madras.">
+<meta name="theme-color" content="#0E0E0E">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Onest:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=104">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module" src="main.js?v=104"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Preloader: greetings flash by, then the screen lifts away on a curve -->
+<div class="pre" aria-hidden="true">
+  <svg class="pre__curve" preserveAspectRatio="none"><path></path></svg>
+  <p class="pre__word"><span class="pre__txt">Hello</span></p>
+</div>
+
+<div class="choice" role="dialog" aria-modal="true" aria-labelledby="choice-title" tabindex="-1" hidden>
+  <canvas class="choice__gl" aria-hidden="true"></canvas>
+  <p class="choice__title" id="choice-title">Choose your experience</p>
+  <div class="choice__split">
+    <button type="button" class="choice__site" data-pick="portfolio">
+      <span class="choice__k">01 — Website</span>
+      <span class="choice__mock" aria-hidden="true"><b>Pranshu</b><b>Kumar<i>.</i></b></span>
+        </span>
+      </span>
+      <span class="choice__desc">Explore the visual portfolio experience.</span>
+      <span class="choice__go">Enter <span aria-hidden="true">→</span></span>
+    </button>
+    <div class="choice__term">
+      <span class="choice__k">02 — Terminal</span>
+      <button type="button" class="choice__boot" data-pick="terminal">Click the laptop to boot <span aria-hidden="true">↗</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- Stair transition into the website: columns rise to cover the screen, then lift away -->
+<div class="stairs" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- Inside the PK-1100: its plastic bezel framing the (cracked) LCD, with the live terminal on it -->
+<div class="lap" role="dialog" aria-modal="true" aria-label="PK-1100 terminal" hidden>
+  <div class="lap__screen">
+    <iframe class="lap__frame" title="Pranshu Kumar's developer terminal"></iframe>
+    <div class="lap__warp" aria-hidden="true"></div>
+    <canvas class="lap__crack" aria-hidden="true"></canvas>
+    <div class="lap__grain" aria-hidden="true"></div>
+    <div class="lap__glass" aria-hidden="true"></div>
+    <!-- shifts each glass shard a few pixels, so the terminal's text breaks along the fractures -->
+    <svg class="lap__defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <filter id="lcd-crack" x="0" y="0" width="1" height="1" color-interpolation-filters="sRGB">
+        <feImage class="lap__map" x="0" y="0" preserveAspectRatio="none" result="map"/>
+        <feDisplacementMap in="SourceGraphic" in2="map" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </svg>
+  </div>
+  <div class="lap__chin">
+    <button type="button" class="lap__back">← back</button>
+    <span class="lap__badge">PK-1100</span>
+    <span class="lap__led" aria-hidden="true"></span>
+  </div>
+</div>
+
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+<header class="nav">
+  <a class="nav__mark" href="#top" aria-label="Pranshu Kumar, back to top">PK</a>
+  <nav class="idx" aria-label="Sections">
+    <div class="idx__track">
+      <span class="idx__marker" aria-hidden="true"></span>
+      <a class="idx__item" href="#top" data-for="top">Intro</a>
+      <a class="idx__item" href="#about" data-for="about">About</a>
+      <a class="idx__item" href="#experience" data-for="experience">Experience</a>
+      <a class="idx__item" href="#work" data-for="work">Work</a>
+      <a class="idx__item" href="#toolbox" data-for="toolbox">Toolbox</a>
+      <a class="idx__item" href="#contact" data-for="contact">Contact</a>
+    </div>
+  </nav>
+  <button class="sound" type="button" aria-pressed="false" aria-label="Ambient sound"><span class="sound__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="sound__txt">Sound</span></button>
+  <a class="nav__cta" href="assets/Pranshu-Kumar-Resume.pdf" target="_blank" rel="noopener">Résumé<span aria-hidden="true">↗</span></a>
+</header>
+
+
+<main id="main">
+  <!-- ============ HERO: the name, edge to edge ============ -->
+  <section class="hero" id="top" data-scene="0" aria-labelledby="hero-title">
+    <p class="hero__hi label">[00] Hi, I'm</p>
+    <h1 id="hero-title" class="hero__name">
+      <span class="sr-only">Pranshu Kumar</span>
+      <span class="hn" aria-hidden="true">Pranshu</span>
+    </h1>
+    <div class="hero__row">
+      <p class="hero__type">
+        <span class="sr-only">I build MCP servers, retrieval pipelines and the full-stack products around them.</span>
+        <span aria-hidden="true"><span class="typed">I build MCP servers.</span><span class="caret"></span></span>
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="#work">See the work <span aria-hidden="true">↓</span></a>
+        <a class="btn" href="assets/Pranshu-Kumar-Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="hero__ui">
+      <p class="hero__role">Software engineer<br><em>B.Tech CSE · BS Data Science</em></p>
+      <p class="hero__meta label">Vadodara, IN — <span class="clock">--:--</span> IST<br>Currently: placements @ Parul</p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT: one sentence, lit up as you read it ============ -->
+  <section class="about" id="about" data-scene="1" aria-labelledby="about-title">
+    <p class="label">[01] About</p>
+    <h2 id="about-title" class="sr-only">About</h2>
+    <p class="about__text" data-read>I build the plumbing between <em>AI models</em> and the real world: the auth flow, the retrieval step, the check that stops a bad deploy.</p>
+    <div class="about__foot">
+      <!-- Drop a photo at assets/pranshu.webp and it replaces the placeholder automatically. -->
+      <figure class="portrait" data-reveal>
+        <span class="portrait__ph label" aria-hidden="true">Photo<br>coming soon</span>
+        <img src="assets/pranshu.webp" alt="Portrait of Pranshu Kumar" loading="lazy" width="800" height="1000" onerror="this.remove()">
+      </figure>
+      <p class="about__note" data-reveal>Two degrees run in parallel: computer science at Parul University and data science at IIT Madras. Between them sit internships, placement drives and a lot of late nights with documentation.</p>
+      <dl class="figures">
+        <div data-reveal><dt class="label">B.Tech CGPA</dt><dd data-count="8.54" data-dec="2">8.54</dd></div>
+        <div data-reveal><dt class="label">IIT Madras CGPA</dt><dd data-count="7.04" data-dec="2">7.04</dd></div>
+        <div data-reveal><dt class="label">MCP env checks</dt><dd data-count="30" data-suffix="+">30+</dd></div>
+        <div data-reveal><dt class="label">Model params</dt><dd data-count="7" data-suffix="B">7B</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE: a light panel that wipes open ============ -->
+  <section class="exp" id="experience" data-scene="2" aria-labelledby="exp-title">
+    <header class="sec-head">
+      <p class="label">[02] Experience</p>
+      <h2 id="exp-title" class="h2" data-split>Where it ran <em>for real.</em></h2>
+    </header>
+    <ol class="xp">
+      <li class="xp__row" data-reveal>
+        <span class="xp__n label">01</span>
+        <div class="xp__what"><h3>vsf&#8209;mcp</h3><p class="xp__role">Associate Software Engineer Intern · ServiceNow, Hyderabad</p></div>
+        <p class="xp__desc">A Model Context Protocol server that gives Claude authenticated access to ServiceNow VSF instances. OAuth 2.0 + PKCE sign-in, and 30+ environment checks before an agent touches anything.</p>
+        <span class="xp__when label">May–Jul 2026</span>
+      </li>
+      <li class="xp__row" data-reveal>
+        <span class="xp__n label">02</span>
+        <div class="xp__what"><h3>Agentic SDLC</h3><p class="xp__role">Hooks &amp; bundled skills · ServiceNow, Hyderabad</p></div>
+        <p class="xp__desc">ATF test generation, code-coverage estimation, instance-scan orchestration and test-data generation, turning tool-centric workflows into conversations.</p>
+        <span class="xp__when label">May–Jul 2026</span>
+      </li>
+      <li class="xp__row" data-reveal>
+        <span class="xp__n label">03</span>
+        <div class="xp__what"><h3>TNP Cell</h3><p class="xp__role">Operation Intern, Training &amp; Placement · Parul University</p></div>
+        <p class="xp__desc">Leads CSE and IT placements and works directly with hiring companies. Mentors juniors on résumés, interviews and technical skills; runs workshops and drives.</p>
+        <span class="xp__when label">Jul 2026–now</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ WORK: numbered cards on a scroll-driven 3D ring ============ -->
+  <section class="work" id="work" data-scene="3" aria-labelledby="work-title">
+    <header class="sec-head">
+      <p class="label">[03] Selected work</p>
+      <h2 id="work-title" class="h2" data-split>Things that <em>retrieve,</em> remember &amp; connect.</h2>
+    </header>
+    <div class="ring" style="--n:6">
+      <div class="ring__stage">
+        <ol class="ring__spin" aria-label="Projects">
+          <li class="card" style="--i:0"><span class="card__n">01</span><span class="card__of label">/ 06</span></li>
+          <li class="card" style="--i:1"><span class="card__n">02</span><span class="card__of label">/ 06</span></li>
+          <li class="card" style="--i:2"><span class="card__n">03</span><span class="card__of label">/ 06</span></li>
+          <li class="card" style="--i:3"><span class="card__n">04</span><span class="card__of label">/ 06</span></li>
+          <li class="card" style="--i:4"><span class="card__n">05</span><span class="card__of label">/ 06</span></li>
+          <li class="card" style="--i:5"><span class="card__n">06</span><span class="card__of label">/ 06</span></li>
+        </ol>
+      </div>
+      <p class="ring__count label" aria-hidden="true"><span class="ring__cur">01</span> / 06</p>
+    </div>
+  </section>
+
+  <!-- ============ TOOLBOX: skills you can throw around ============ -->
+  <section class="play" id="toolbox" data-scene="4" aria-labelledby="play-title">
+    <header class="sec-head">
+      <p class="label">[04] Toolbox</p>
+      <h2 id="play-title" class="h2" data-split>Go on, throw <em>them</em> around.</h2>
+    </header>
+    <ul class="play__box" aria-label="Skills">
+      <li>Python</li><li>Java</li><li>C++</li><li>JavaScript</li><li class="hot">MCP</li><li>FastAPI</li><li>Django</li><li>Flask</li>
+      <li class="hot">RAG</li><li>FAISS</li><li>PyTorch</li><li>scikit-learn</li><li>Pandas</li><li>NumPy</li><li>PostgreSQL</li>
+      <li>MongoDB</li><li>MySQL</li><li class="hot">QLoRA</li><li>OAuth 2.0</li><li>Jupyter</li><li>C</li><li>Leadership</li>
+    </ul>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact" data-scene="5" aria-labelledby="contact-title">
+    <p class="label contact__k">[05] Contact</p>
+    <h2 id="contact-title" class="talk"><span class="sr-only">Let's talk</span><span class="talk__vis" aria-hidden="true">Let's talk</span></h2>
+    <a class="contact__mail" href="mailto:ipranshukumar26@gmail.com" data-cursor="Write">ipranshukumar26@gmail.com</a>
+    <ul class="contact__links" data-reveal>
+      <li><a class="roll" href="https://www.linkedin.com/in/pranshu-kumar-iitm" target="_blank" rel="noopener"><span data-t="LinkedIn">LinkedIn</span></a></li>
+      <li><a class="roll" href="https://github.com/Pranshu936" target="_blank" rel="noopener"><span data-t="GitHub">GitHub</span></a></li>
+      <li><a class="roll" href="https://leetcode.com/itz_pranshukumar" target="_blank" rel="noopener"><span data-t="LeetCode">LeetCode</span></a></li>
+      <li><a class="roll" href="https://www.codechef.com/users/holy_sky_93" target="_blank" rel="noopener"><span data-t="CodeChef">CodeChef</span></a></li>
+      <li><a class="roll" href="https://codeforces.com/profile/ipranshukumar26" target="_blank" rel="noopener"><span data-t="Codeforces">Codeforces</span></a></li>
+      <li><a class="roll" href="assets/Pranshu-Kumar-Resume.pdf" target="_blank" rel="noopener"><span data-t="Résumé">Résumé</span></a></li>
+    </ul>
+    <footer class="foot label"><span>© 2026 Pranshu Kumar · Vadodara, IN</span><a href="#top">Back to top ↑</a></footer>
+  </section>
+</main>
+
+</body>
+</html>
