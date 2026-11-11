@@ -308,11 +308,11 @@ site.addEventListener('pointermove', (e) => {
 if (fine && !reduce) {
   const tilt = { duration: 0.6, ease: 'power3' };
   const rx = gsap.quickTo(site, 'rotationX', tilt), ry = gsap.quickTo(site, 'rotationY', tilt), sc = gsap.quickTo(site, 'scale', tilt);
-  const AMP = 12;
+  const AMP = 5;
   site.addEventListener('pointermove', (e) => {
     const r = site.getBoundingClientRect();
     const px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
-    rx(-py * AMP * 2); ry(px * AMP * 2); sc(1.05);
+    rx(-py * AMP * 2); ry(px * AMP * 2); sc(1.02);
   });
   site.addEventListener('pointerleave', () => { rx(0); ry(0); sc(1); });
 }
